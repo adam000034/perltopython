@@ -29,20 +29,7 @@ def diskcreation():
         mbr = f.read(512)
     finally:
         f.close()
-    x = struct.unpack("<i", mbr[0x1B1:0x1B5])
-    print("Disk signature: ", x[0])
-    x = mbr[0x1BE]
-    if x == 0x80:
-        print("Active flag: Active")
-    else:
-        print("Active flag: Not active")
-    lbastart = struct.unpack("<i", mbr[0x1C6:0x1CA])
-
-    print("Partition Start (LBA): ", lbastart[0])
-
-    lbaend = struct.unpack("<i", mbr[0x1C9:0x1CD])
-
-    print("Partition End (LBA): ", lbaend[0])
+    
     geometry = {'H':16, 'S':63};
     #PYTHON VERSION OF FILEHANDLE THAT SHOULD WORK HERE
     #Will create a new file called makedisk that it will write out to here

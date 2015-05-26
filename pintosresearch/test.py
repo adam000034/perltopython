@@ -41,7 +41,6 @@ def do_set_part(role, source, arg):
         myp['OFFSET'] = 0;
         fileinfo = os.stat(myarg);
         filesize = fileinfo.st_size;
-        # print ("FILE SIZE: ", filesize);
         myp['BYTES'] = filesize;
         parts[role]['FILE'] = myp['FILE'];
         parts[role]['OFFSET'] = myp['OFFSET'];

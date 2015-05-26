@@ -62,7 +62,6 @@ def do_set_part(role, source, arg):
         myargregexresults = "";
         myyargregexresults = regexpattern.match(myarg);
         if (myargregexresults == ""):
-            # like $arg =~ /^\d+(\.\d+)?|\.\d+$/ or die "$arg: not a valid size in MB\n";
             return;
         myp['FILE'] = "/dev/zero";
         myp['OFFSET'] = 0;
